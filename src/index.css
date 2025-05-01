@@ -1,4 +1,86 @@
+@layer normalize, primereact;
+
+@import "normalize.css" layer(normalize-reset);
+
+/* width */
+/* ::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+} */
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+} */
+
+/* Handle */
+/* ::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
+} */
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+} */
+
 :root {
+  --text-main-primary: rgb(4, 153, 222);
+  --text-secondary: rgb(125, 125, 125);
+  --text-success: rgb(4, 185, 4);
+  --bg-color-primary: rgba(4, 153, 222, 0.429);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: aliceblue;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+a {
+  text-decoration: none;
+  font-size: 14px;
+  color: rgb(95, 93, 93);
+}
+
+.h-custom {
+  height: calc(100vh - 7rem);
+}
+
+.container {
+  max-width: 1800px;
+  margin: auto;
+}
+
+.text-main-primary {
+  color: var(--text-main-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-success {
+  color: var(--text-success);
+}
+
+.bg-color-primary {
+  background-color: var(--bg-color-primary);
+}
+
+/* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +147,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
