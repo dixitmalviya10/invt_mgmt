@@ -9,9 +9,9 @@ const MainLayout = () => {
   return (
     <div>
       <Header setVisible={setVisible} />
-      <div className="flex pt-8">
+      <div className="flex pt-8 relative">
         <Sidepanel visible={visible} />
-        <main className="mt-2 mb-4 mx-4 flex-1">
+        <main className={`mt-2 mb-4 ${visible ? 'mx-4' : 'content-left-margin mr-4'} flex-1`}>
           <div className="container">
             <Outlet />
           </div>

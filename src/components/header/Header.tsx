@@ -10,8 +10,8 @@ const Header: React.FC<SetVisible> = ({ setVisible }) => {
   return (
     <>
       <header className="relative">
-        <div className="bg-white flex justify-content-between px-4 shadow-3 py-2 align-items-center absolute top-0 left-0 right-0">
-          <div className="flex align-items-center justify-content-between gap-3 lg:gap-5 w-full">
+        <div className="bg-white flex justify-content-between px-4 shadow-3 py-2 align-items-center fixed top-0 left-0 right-0 z-5">
+          <div className="flex align-items-center justify-content-between gap-3 lg:gap-4 w-full">
             <div className="flex flex-order-1 lg:flex-order-0 align-items-center gap-1 lg:flex-1 lg:max-w-20rem">
               <img src="/assets/logos/logo-dark.svg" alt="logo" width={50} />
               <span className="text-lg md:text-xl">SAKAI</span>

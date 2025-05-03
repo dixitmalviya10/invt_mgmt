@@ -29,7 +29,12 @@
   --text-main-primary: rgb(4, 153, 222);
   --text-secondary: rgb(125, 125, 125);
   --text-success: rgb(4, 185, 4);
+  --text-danger: rgba(255, 166, 0, 0.955);
+  --text-info: purple;
   --bg-color-primary: rgba(4, 153, 222, 0.429);
+  --bg-color-secondary: rgb(125, 125, 125, 0.429);
+  --bg-color-danger: rgba(255, 166, 0, 0.462);
+  --bg-color-info: rgba(128, 0, 128, 0.356);
 }
 
 * {
@@ -76,9 +81,44 @@ a {
   color: var(--text-success);
 }
 
+.text-danger {
+  color: var(--text-danger);
+}
+
+.text-info {
+  color: var(--text-info);
+}
+
 .bg-color-primary {
   background-color: var(--bg-color-primary);
 }
+
+.bg-color-danger {
+  background-color: var(--bg-color-danger);
+}
+
+.bg-color-info {
+  background-color: var(--bg-color-info);
+}
+
+.bg-color-secondary {
+  background-color: var(--bg-color-secondary);
+}
+
+.content-left-margin {
+  margin-left: 22.5rem;
+}
+
+.icon-btn-sm {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* .grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+} */
 
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
