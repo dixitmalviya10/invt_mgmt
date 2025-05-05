@@ -28,7 +28,7 @@ export const Sidepanel: React.FC<Visible> = () => {
   ];
   return (
     <aside
-      className={`mt-2 mb-4 shadow-1 ml-4 p-2 bg-white border-round-lg max-w-20rem overflow-y-auto h-custom`}>
+      className={`mt-2 mb-4 shadow-1 ml-4 p-2 bg-white border-round-lg max-w-20rem overflow-y-auto flex flex-column justify-content-between h-custom`}>
       <nav>
         <ul>
           {navList.map((data) => (
