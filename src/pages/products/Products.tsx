@@ -27,7 +27,7 @@ const Products = () => {
   };
 
   const actionTemplate = (rowData: ProductForm & { id: number | null }) => (
-    <div className="flex gap-1">
+    <div className="flex justify-content-center gap-1">
       <Button
         onClick={() => handleProduct(rowData, "VIEW")}
         icon={<Eye size={20} />}
@@ -73,22 +73,39 @@ const Products = () => {
             }}
           />
         </div>
-        <DataTable value={products} stripedRows>
+        <DataTable rowHover value={products} rows={10} paginator stripedRows>
           <Column
+            frozen
             header="Sr.No"
-            body={(_rowData, options) => options.rowIndex + 1}></Column>
-          <Column field="name" header="Name"></Column>
-          <Column field="sku" header="SKU"></Column>
-          <Column field="category" header="Category"></Column>
+            body={(_rowData, options) => options.rowIndex + 1}
+            style={{ minWidth: "50px" }}></Column>
+          <Column
+            frozen
+            field="name"
+            header="Name"
+            style={{ minWidth: "200px" }}></Column>
+          <Column
+            field="sku"
+            header="SKU"
+            style={{ minWidth: "50px" }}></Column>
+          <Column
+            field="category"
+            header="Category"
+            style={{ minWidth: "200px" }}></Column>
           <Column
             field="costPrice"
             header="Cost Price"
-            body={(rowData) => formatCurrency(rowData.costPrice)}></Column>
+            body={(rowData) => formatCurrency(rowData.costPrice)}
+            style={{ minWidth: "130px" }}></Column>
           <Column
             field="sellingPrice"
             header="Selling Price"
-            body={(rowData) => formatCurrency(rowData.sellingPrice)}></Column>
-          <Column field="currentQty" header="Quantity"></Column>
+            body={(rowData) => formatCurrency(rowData.sellingPrice)}
+            style={{ minWidth: "130px" }}></Column>
+          <Column
+            field="currentQty"
+            header="Quantity"
+            style={{ minWidth: "100px" }}></Column>
           <Column header="Actions" body={actionTemplate}></Column>
         </DataTable>
       </div>

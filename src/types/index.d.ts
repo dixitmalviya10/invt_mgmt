@@ -45,6 +45,13 @@ interface ProductDialogProps extends ManageOverlays {
 
 type DeleteModalProps = Omit<ProductDialogProps, "dialogType">;
 
+interface LowInventoryProducts {
+  id: string;
+  name: string;
+  quantity: number;
+  lowStockThreshold: number;
+}
+
 export type {
   ChildContainerProps,
   TNavigateLink,
@@ -55,4 +62,5 @@ export type {
   ProductForm,
   ProductDialogProps,
   DeleteModalProps,
+  LowInventoryProducts,
 };

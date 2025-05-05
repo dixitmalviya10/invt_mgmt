@@ -37,13 +37,13 @@
   --bg-color-info: rgba(128, 0, 128, 0.356);
 }
 
-* {
+/* * {
   scroll-behavior: smooth;
 }
 
 body {
   background-color: aliceblue;
-}
+} */
 
 ul {
   list-style: none;

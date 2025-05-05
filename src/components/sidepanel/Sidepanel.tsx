@@ -20,7 +20,7 @@ export const MobileSidePanel: React.FC<{
   );
 };
 
-export const Sidepanel: React.FC<Visible> = ({ visible }) => {
+export const Sidepanel: React.FC<Visible> = () => {
   const navList = [
     { label: "Dashboard", navTo: "/", icon: <House /> },
     { label: "Products", navTo: "/products", icon: <Package /> },
@@ -28,9 +28,7 @@ export const Sidepanel: React.FC<Visible> = ({ visible }) => {
   ];
   return (
     <aside
-      className={`fixed left-0 right-0 z-5 mt-2 mb-4 shadow-1 ml-4 p-2 bg-white border-round-lg flex-1 max-w-20rem overflow-y-auto h-custom ${
-        visible ? "hidden" : "flex flex-column justify-content-between"
-      }`}>
+      className={`mt-2 mb-4 shadow-1 ml-4 p-2 bg-white border-round-lg max-w-20rem overflow-y-auto h-custom`}>
       <nav>
         <ul>
           {navList.map((data) => (

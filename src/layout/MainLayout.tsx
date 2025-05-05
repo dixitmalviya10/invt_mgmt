@@ -9,9 +9,17 @@ const MainLayout = () => {
   return (
     <div>
       <Header setVisible={setVisible} />
-      <div className="flex pt-8 relative">
-        <Sidepanel visible={visible} />
-        <main className={`mt-2 mb-4 ${visible ? 'mx-4' : 'content-left-margin mr-4'} flex-1`}>
+      <div className="pt-8 relative">
+        <div
+          className={`fixed left-0 z-5 transition-transform transition-duration-300 transition-ease-in-out ${
+            visible ? "-translate-x-100" : "translate-x-0"
+          }`}>
+          <Sidepanel visible={visible} />
+        </div>
+        <main
+          className={`mt-2 mb-4 transition-all transition-duration-300 transition-ease-in-out ${
+            visible ? "mx-4" : "content-left-margin mr-4"
+          } flex-1`}>
           <div className="container">
             <Outlet />
           </div>

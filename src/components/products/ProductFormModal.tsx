@@ -87,9 +87,10 @@ const ProductFormModal: React.FC<ProductDialogProps> = ({
               name="name"
               control={control}
               rules={{ required: true }}
-              render={({ field }) => (
+              render={({ field, fieldState }) => (
                 <InputText
                   {...field}
+                  invalid={fieldState.invalid}
                   id={field.name}
                   className="block w-full"
                 />
@@ -104,9 +105,10 @@ const ProductFormModal: React.FC<ProductDialogProps> = ({
               name="sku"
               control={control}
               rules={{ required: true }}
-              render={({ field }) => (
+              render={({ field, fieldState }) => (
                 <InputText
                   {...field}
+                  invalid={fieldState.invalid}
                   id={field.name}
                   className="block w-full"
                 />
@@ -120,10 +122,11 @@ const ProductFormModal: React.FC<ProductDialogProps> = ({
             <Controller
               name="category"
               control={control}
-              render={({ field }) => (
+              render={({ field, fieldState }) => (
                 <AutoComplete
                   {...field}
                   inputId={field.name}
+                  invalid={fieldState.invalid}
                   suggestions={filteredCategories}
                   completeMethod={searchCategories}
                   forceSelection
@@ -134,13 +137,10 @@ const ProductFormModal: React.FC<ProductDialogProps> = ({
             />
           </div>
           <div className="col">
-            <label htmlFor="costPrice">
-              Cost Price <span className="p-error">*</span>
-            </label>
+            <label htmlFor="costPrice">Cost Price</label>
             <Controller
               name="costPrice"
               control={control}
-              // rules={{ required: true }}
               render={({ field }) => (
                 <InputNumber
                   inputId={field.name}
@@ -158,13 +158,10 @@ const ProductFormModal: React.FC<ProductDialogProps> = ({
         <div>
           <div className="grid grid-nogutter gap-3 mb-3">
             <div className="col">
-              <label htmlFor="sellingPrice">
-                Selling Price <span className="p-error">*</span>
-              </label>
+              <label htmlFor="sellingPrice">Selling Price</label>
               <Controller
                 name="sellingPrice"
                 control={control}
-                // rules={{ required: true }}
                 render={({ field }) => (
                   <InputNumber
                     mode="currency"
@@ -179,13 +176,10 @@ const ProductFormModal: React.FC<ProductDialogProps> = ({
               />
             </div>
             <div className="col">
-              <label htmlFor="currentQty">
-                Quantity <span className="p-error">*</span>
-              </label>
+              <label htmlFor="currentQty">Quantity</label>
               <Controller
                 name="currentQty"
                 control={control}
-                // rules={{ required: true }}
                 render={({ field }) => (
                   <InputNumber
                     inputId={field.name}

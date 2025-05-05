@@ -51,16 +51,27 @@ const Home = () => {
       <div className="grid grid-nogutter gap-3">
         <div className="shadow-1 p-4 bg-white border-round-lg col-6 flex-1">
           <h3 className="mt-0 font-medium">Recent Sales</h3>
-          <DataTable size="small" value={products} stripedRows>
-            <Column field="sku" header="SKU"></Column>
-            <Column field="name" header="Name"></Column>
+          <DataTable size="small" value={products.slice(0, 5)} stripedRows>
             <Column
+              frozen
+              header="Sr.No"
+              body={(_rowData, options) => options.rowIndex + 1}
+              style={{ minWidth: "50px" }}></Column>
+            <Column
+              style={{ minWidth: "50px" }}
+              field="sku"
+              header="SKU"></Column>
+            <Column
+              style={{ minWidth: "150px" }}
+              field="name"
+              header="Name"></Column>
+            <Column
+              style={{ minWidth: "150px" }}
               field="sellingPrice"
               header="Selling Price"
               body={(rowData) =>
                 formatCurrency(rowData?.sellingPrice)
               }></Column>
-            <Column field="currentQty" header="Quantity"></Column>
           </DataTable>
         </div>
         <div className="shadow-1 p-4 bg-white border-round-lg col-6 flex-1">
