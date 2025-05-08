@@ -65,13 +65,14 @@ const ProductFormModal: React.FC<ProductDialogProps> = ({
   }, [dialogType, productData, setValue]);
   return (
     <Dialog
+      className="mx-3"
       headerClassName="py-3"
       contentClassName="pt-1 pb-3"
       resizable={false}
       draggable={false}
       header="Add"
       visible={visible}
-      style={{ width: "30vw" }}
+      style={{ maxWidth: "30rem" }}
       onHide={() => {
         if (!visible) return;
         reset();
@@ -79,7 +80,7 @@ const ProductFormModal: React.FC<ProductDialogProps> = ({
       }}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-nogutter gap-3 mb-3">
-          <div className="col">
+          <div className="col-12 lg:col">
             <label htmlFor="name">
               Name <span className="p-error">*</span>
             </label>
@@ -97,7 +98,7 @@ const ProductFormModal: React.FC<ProductDialogProps> = ({
               )}
             />
           </div>
-          <div className="col">
+          <div className="col-12 lg:col">
             <label htmlFor="sku">
               SKU <span className="p-error">*</span>
             </label>
@@ -117,7 +118,7 @@ const ProductFormModal: React.FC<ProductDialogProps> = ({
           </div>
         </div>
         <div className="grid grid-nogutter gap-3 mb-3">
-          <div className="col">
+          <div className="col-12 lg:col">
             <label htmlFor="category">Select Category</label>
             <Controller
               name="category"
@@ -131,12 +132,13 @@ const ProductFormModal: React.FC<ProductDialogProps> = ({
                   completeMethod={searchCategories}
                   forceSelection
                   placeholder="Select a category"
-                  inputClassName="block w-full"
+                  inputClassName="w-full block"
+                  // className="w-full"
                 />
               )}
             />
           </div>
-          <div className="col">
+          <div className="col-12 lg:col">
             <label htmlFor="costPrice">Cost Price</label>
             <Controller
               name="costPrice"
@@ -144,7 +146,7 @@ const ProductFormModal: React.FC<ProductDialogProps> = ({
               render={({ field }) => (
                 <InputNumber
                   inputId={field.name}
-                  inputClassName="block w-full"
+                  className="w-full"
                   mode="currency"
                   currency="USD"
                   locale="en-US"
@@ -157,7 +159,7 @@ const ProductFormModal: React.FC<ProductDialogProps> = ({
         </div>
         <div>
           <div className="grid grid-nogutter gap-3 mb-3">
-            <div className="col">
+            <div className="col-12 lg:col">
               <label htmlFor="sellingPrice">Selling Price</label>
               <Controller
                 name="sellingPrice"
@@ -168,14 +170,14 @@ const ProductFormModal: React.FC<ProductDialogProps> = ({
                     currency="USD"
                     locale="en-US"
                     inputId={field.name}
-                    inputClassName="block w-full"
+                    className="w-full"
                     value={field.value}
                     onValueChange={(e) => field.onChange(e.value)}
                   />
                 )}
               />
             </div>
-            <div className="col">
+            <div className="col-12 lg:col">
               <label htmlFor="currentQty">Quantity</label>
               <Controller
                 name="currentQty"
@@ -183,7 +185,7 @@ const ProductFormModal: React.FC<ProductDialogProps> = ({
                 render={({ field }) => (
                   <InputNumber
                     inputId={field.name}
-                    inputClassName="block w-full"
+                    className="w-full"
                     value={field.value}
                     onValueChange={(e) => field.onChange(e.value)}
                   />

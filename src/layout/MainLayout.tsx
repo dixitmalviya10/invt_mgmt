@@ -17,7 +17,7 @@ const MainLayout = () => {
             className={`fixed left-0 z-5 transition-transform transition-duration-300 transition-ease-in-out ${
               visible ? "-translate-x-100" : "translate-x-0"
             }`}>
-            <Sidepanel visible={visible} />
+            <Sidepanel />
           </div>
         ) : (
           <MobileSidePanel visible={visible} setVisible={setVisible} />
